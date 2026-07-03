@@ -642,7 +642,7 @@ seg000:0316                 cmp     bl, 10
 seg000:0319                 jb      short loc_F00306
 seg000:031B
 seg000:031B loc_F0031B:                             ; CODE XREF: set_stack+2E6↑j
-seg000:031B                 mov     al, 2
+seg000:031B                 mov     al, bl
 seg000:031D                 cbw
 seg000:031E                 shl     ax, 6
 seg000:0321                 mov     cx, ax
@@ -651,7 +651,7 @@ seg000:0325                 call    read_cmos
 seg000:0328                 mov     ah, al
 seg000:032A                 mov     al, CMOS_15h_Base_Memory_Low
 seg000:032C                 call    read_cmos
-seg000:032F                 xor     ax, ax
+seg000:032F                 cmp     ax, cx
 seg000:0331                 jz      short loc_F00339
 seg000:0333                 mov     si, offset shut_MEM_PASS
 seg000:0336                 call    cmos_write4
@@ -16003,14 +16003,14 @@ seg000:55C7
 seg000:55C7 loc_F055C7:                             ; CODE XREF: seg000:55C2↑j
 seg000:55C7                 push    dx
 seg000:55C8                 push    bx
-seg000:55C9                 mov     dx, es:65h
+seg000:55C9                 mov     dx, word ptr es:loc_F00064+1
 seg000:55CE                 call    set_cursor_weird
 seg000:55D1                 xor     ch, ch
 seg000:55D3                 push    ax
 seg000:55D4                 mov     al, 20h ; ' '
 seg000:55D6                 call    print_int10h_weird
 seg000:55D9                 pop     ax
-seg000:55DA                 mov     byte ptr es:63h, 7
+seg000:55DA                 mov     byte ptr es:loc_F00062+1, 7
 seg000:55E0                 pop     bx
 seg000:55E1                 pop     dx
 seg000:55E2                 pop     cx
@@ -16151,6 +16151,7 @@ seg000:576E                 mov     ax, cs
 seg000:5770                 mov     ds, ax
 seg000:5772                 assume ds:nothing
 seg000:5772                 mov     es, cs:Segment_70
+seg000:5777                 assume es:nothing
 seg000:5777
 seg000:5777 loc_F05777:                             ; CODE XREF: print_time+16↓j
 seg000:5777                 clc
@@ -16218,7 +16219,6 @@ seg000:57DC                 pop     ax
 seg000:57DD                 retn
 seg000:57DD print_time      endp
 seg000:57DD
-seg000:57DE                 assume es:nothing
 seg000:57DE
 seg000:57DE ; =============== S U B R O U T I N E =======================================
 seg000:57DE
