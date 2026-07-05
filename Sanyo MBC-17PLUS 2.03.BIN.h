@@ -751,6 +751,7 @@ enum BDA_indexes : unsigned __int8
   BDA_9Ah_User_Wait_pointer_Segment = 0x9A,
   BDA_9Ch_User_Wait_count_lower = 0x9C,
   BDA_9Eh_User_Wait_count_upper = 0x9E,
+  BDA_C0h_Sanyo_video_seg = 0xC0,
   BDA_A0h_User_Wait_Flag = 0xA0,
   BDA_A8h_video_param_ctrl_block_Offset = 0xA8,
   BDA_AAh_video_param_ctrl_block_Segment = 0xAA,
@@ -2490,6 +2491,16 @@ enum Keyboard_scancodes : unsigned __int16
   scancode_DOWN = 0x50,
   scancode_DOWN_ = 0x5000,
   scancode_DEL = 0x53,
+  scancode_Home_ = 0x4700,
+  scancode_F1_ = 0x3B00,
+  scancode_F2_ = 0x3C00,
+  scancode_F3_ = 0x3D00,
+  scancode_F4_ = 0x3E00,
+  scancode_F5_ = 0x3F00,
+  scancode_F6_ = 0x4000,
+  scancode_F7_ = 0x4100,
+  scancode_F8_ = 0x4200,
+  scancode_F9_ = 0x4300,
 };
 
 /* 157 */
