@@ -54,8 +54,6 @@ enum IO_Ports : unsigned __int16
   IO_Port_64h_KBC_Status = 0x64,
   IO_Port_70h_CMOS_Index = 0x70,
   IO_Port_71h_CMOS_Data = 0x71,
-  IO_Port_72h_FE3001_Command_Index = 0x72,
-  IO_Port_73h_FE3001_Command_Data = 0x73,
   IO_Port_80h_POST_Code = 0x80,
   IO_Port_81h_DMA_Page_Ch2 = 0x81,
   IO_Port_82h_DMA_Page_Ch3 = 0x82,
@@ -96,18 +94,6 @@ enum IO_Ports : unsigned __int16
   IO_Port_1F7h_IDE_0_Command = 0x1F7,
   IO_Port_1F7h_IDE_0_Status = 0x1F7,
   IO_Port_201h_Gameport = 0x201,
-  IO_Port_332h_Zenith_mystery_Data = 0x332,
-  IO_Port_330h_Zenith_mystery_transfer_length_low = 0x330,
-  IO_Port_331h_Zenith_mystery_transfer_length_high = 0x331,
-  IO_Port_333h_Zenith_mystery_Command = 0x333,
-  IO_Port_334h_Zenith_unknown = 0x334,
-  IO_Port_335h_Zenith_unknown = 0x335,
-  IO_Port_336h_Zenith_unknown = 0x336,
-  IO_Port_337h_Zenith_mystery_Status = 0x337,
-  IO_Port_338h_Zenith_unknown = 0x338,
-  IO_Port_339h_Zenith_unknown = 0x339,
-  IO_Port_33Bh_Zenith_unknown = 0x33B,
-  IO_Port_33Ch_Zenith_unknown = 0x33C,
   IO_Port_3B4h_CRTC_Index_Mono = 0x3B4,
   IO_Port_3B5h_CRTC_Data_Mono = 0x3B5,
   IO_Port_3B8h_CRTC_Mode_Control_Mono = 0x3B8,
@@ -127,21 +113,23 @@ enum IO_Ports : unsigned __int16
   IO_Port_3F4h_FDC_Data_Rate_Select = 0x3F4,
   IO_Port_3F5h_FDD_Command = 0x3F5,
   IO_Port_3F5h_FDD_Data = 0x3F5,
+  IO_Port_372h_FDC2_Digital_Output = 0x372,
   IO_Port_3F6h_IDE_0_Dev_Control = 0x3F6,
   IO_Port_3F6h_IDE_0_Alt_Status = 0x3F6,
   IO_Port_3F7h_IDE_0_Drive_Address = 0x3F7,
   IO_Port_3F7h_FDC_Digital_Input_AT = 0x3F7,
   IO_Port_3F7h_FDC_Config_Control = 0x3F7,
   IO_Port_3F8h_COM1_Base = 0x3F8,
-  IO_Port_3F8h_UART_Divisor_Latch_LSB = 0x3F8,
-  IO_Port_3F9h_UART_Divisor_Latch_MSB = 0x3F9,
-  IO_Port_3F9h_UART_Interrupt_Enable = 0x3F9,
-  IO_Port_3FAh_UART_Interrupt_Ident = 0x3FA,
-  IO_Port_3FBh_UART_Line_Control = 0x3FB,
-  IO_Port_3FCh_UART_Modem_Control = 0x3FC,
-  IO_Port_3FDh_UART_Line_Status = 0x3FD,
-  IO_Port_3FEh_UART_Modem_Status = 0x3FE,
+  IO_Port_3F8h_UART1_Divisor_Latch_LSB = 0x3F8,
+  IO_Port_3F9h_UART1_Divisor_Latch_MSB = 0x3F9,
+  IO_Port_3F9h_UART1_Interrupt_Enable = 0x3F9,
+  IO_Port_3FAh_UART1_Interrupt_Ident = 0x3FA,
+  IO_Port_3FBh_UART1_Line_Control = 0x3FB,
+  IO_Port_3FCh_UART1_Modem_Control = 0x3FC,
+  IO_Port_3FDh_UART1_Line_Status = 0x3FD,
+  IO_Port_3FEh_UART1_Modem_Status = 0x3FE,
   IO_Port_2F8h_COM2_Base = 0x2F8,
+  IO_Port_2FAh_UART2_Interrupt_Ident = 0x2FA,
   IO_Port_3E8h_COM3_Base = 0x3E8,
   IO_Port_2E8h_COM4_Base = 0x2E8,
   IO_Port_378h_LPT1_Base = 0x378,
@@ -149,24 +137,39 @@ enum IO_Ports : unsigned __int16
   IO_Port_37Ah_LPT1_Control = 0x37A,
   IO_Port_278h_LPT2_Base = 0x278,
   IO_Port_3BCh_LPT3_Base = 0x3BC,
+  IO_Port_72h_FE3001_Command_Index = 0x72,
+  IO_Port_73h_FE3001_Command_Data = 0x73,
   IO_Port_EDh_Zenith_unknown = 0xED,
   IO_Port_F0h_Zenith_unknown = 0xF0,
   IO_Port_F1h_Zenith_unknown = 0xF1,
   IO_Port_213h_Zenith_unknown = 0x213,
+  IO_Port_332h_Zenith_mystery_Data = 0x332,
+  IO_Port_330h_Zenith_mystery_transfer_length_low = 0x330,
+  IO_Port_331h_Zenith_mystery_transfer_length_high = 0x331,
+  IO_Port_333h_Zenith_mystery_Command = 0x333,
+  IO_Port_334h_Zenith_unknown = 0x334,
+  IO_Port_335h_Zenith_unknown = 0x335,
+  IO_Port_336h_Zenith_unknown = 0x336,
+  IO_Port_337h_Zenith_mystery_Status = 0x337,
+  IO_Port_338h_Zenith_unknown = 0x338,
+  IO_Port_339h_Zenith_unknown = 0x339,
+  IO_Port_33Bh_Zenith_unknown = 0x33B,
+  IO_Port_33Ch_Zenith_unknown = 0x33C,
+  IO_Port_63h_Sanyo_waitstates = 0x63,
 };
 
 /* 3 */
 #pragma pack(push, 1)
-struct port_init
+struct port_init16
 {
-  IO_Ports port;
+  unsigned __int16 offset __enum(IO_Ports);
   unsigned __int8 value;
 };
 #pragma pack(pop)
 
 /* 4 */
 #pragma pack(push, 1)
-struct __attribute__((packed)) __attribute__((aligned(1))) cmd_lookup
+struct __unaligned __declspec(align(1)) cmd_lookup
 {
   unsigned __int8 key __char;
   void *address __offset(OFF16|AUTO);
@@ -178,7 +181,7 @@ struct __attribute__((packed)) __attribute__((aligned(1))) cmd_lookup
 struct OpcodeDescriptor
 {
   void *mnemonic_token __offset(OFF16|AUTO);
-  unsigned int operand_flags;
+  unsigned __int16 operand_flags;
 };
 #pragma pack(pop)
 
@@ -186,8 +189,8 @@ struct OpcodeDescriptor
 #pragma pack(push, 1)
 struct reg_table
 {
-  unsigned int len __udec;
-  port_init port_value[];
+  unsigned __int16 len __udec;
+  port_init16 port_value[];
 };
 #pragma pack(pop)
 
@@ -204,16 +207,16 @@ struct data_pair
 #pragma pack(push, 1)
 struct data_table
 {
-  unsigned int len;
+  unsigned __int16 len;
   data_pair offset_data[];
 };
 #pragma pack(pop)
 
 /* 9 */
 #pragma pack(push, 1)
-struct __attribute__((packed)) __attribute__((aligned(1))) some_table1
+struct __unaligned __declspec(align(1)) some_table1
 {
-  unsigned int check;
+  unsigned __int16 check;
   unsigned __int8 data0;
   unsigned __int8 data1;
   unsigned __int8 data2;
@@ -244,7 +247,7 @@ enum __bitmask __bin __lzero IO_Port_201h_Gameport : unsigned __int8
 struct joy_lookup
 {
   IO_Port_201h_Gameport mask;
-  unsigned int disable_timeout_zeroing;
+  unsigned __int16 disable_timeout_zeroing;
   unsigned __int8 end_marker;
 };
 #pragma pack(pop)
@@ -302,8 +305,8 @@ struct compare_pair
 #pragma pack(push, 1)
 struct GDT_descriptor
 {
-  unsigned int limit_low;
-  unsigned int base_low;
+  unsigned __int16 limit_low;
+  unsigned __int16 base_low;
   unsigned __int8 base_mid;
   unsigned __int8 access;
   unsigned __int8 flags_limit;
@@ -313,9 +316,9 @@ struct GDT_descriptor
 
 /* 15 */
 #pragma pack(push, 1)
-struct __attribute__((packed)) __attribute__((aligned(2))) SystemTablePointer
+struct __unaligned __declspec(align(2)) SystemTablePointer32
 {
-  unsigned int gdt_limit;
+  unsigned __int16 gdt_limit;
   unsigned int gdt_base __offset(OFF32|RVAOFF);
 };
 #pragma pack(pop)
@@ -334,7 +337,7 @@ struct disk_error
 struct struct_F0801
 {
   unsigned __int8 mask __bin __lzero;
-  unsigned int length;
+  unsigned __int16 length;
   int pointer;
   int pointer2;
 };
@@ -364,16 +367,16 @@ struct Video_timing_table
 #pragma pack(push, 1)
 struct FDPT
 {
-  unsigned int Cylinders __udec;
+  unsigned __int16 Cylinders __udec;
   unsigned __int8 Heads __udec;
-  unsigned int reducedWriteCyl __udec;
-  unsigned int PrecompCyl __udec;
+  unsigned __int16 reducedWriteCyl __udec;
+  unsigned __int16 PrecompCyl __udec;
   unsigned __int8 ECC;
   unsigned __int8 Control;
   unsigned __int8 bTimeOutStd __udec;
   unsigned __int8 bTimeOutFmt __udec;
   unsigned __int8 bTimeOutChk __udec;
-  unsigned int landinghZoneCyl __udec;
+  unsigned __int16 landinghZoneCyl __udec;
   unsigned __int8 SectorsPerTrack __udec;
   _BYTE unknown;
 };
@@ -483,9 +486,9 @@ enum __bitmask __bin __lzero int15h_C0h_Features : unsigned __int8
 
 /* 26 */
 #pragma pack(push, 1)
-struct __attribute__((packed)) __attribute__((aligned(2))) system_descriptor_table
+struct __unaligned __declspec(align(2)) system_descriptor_table
 {
-  unsigned int len;
+  unsigned __int16 len;
   unsigned __int8 model_number;
   unsigned __int8 Sub_model_number;
   unsigned __int8 BIOS_revision_level;
@@ -508,7 +511,7 @@ enum __bitmask __bin __lzero BDA_42h_floppy_status_register_ST0 : unsigned __int
   FDC_ST0_INT_MASK = 0xC0,              ///< MASK
   FDC_ST0_INT_ABNORMAL = 0b01000000,
   FDC_ST0_INT_INVALID = 0b10000000,     ///< abnormal termination, ready line on, or diskette changed
-  FDC_ST0_INT_SEEK_FAIL = 0b11000000,   ///< seek command not completed
+  FDC_ST0_INT_SEEK_FAIL = 0b11000000,
 };
 
 /* 28 */
@@ -549,15 +552,13 @@ enum __bitmask __bin __lzero BDA_8Fh_floppy_information : unsigned __int8
 /* 31 */
 enum __bitmask __bin __lzero BDA_90h_drive0_media_state_RATE : unsigned __int8
 {
-  FLOPPY_RATE_known_media = 0b00010000,
+  FLOPPY_RATE_media_ESTABLISHED = 0b00010000,
+  FLOPPY_RATE_double_stepping = 0b00100000,
   FLOPPY_RATE_MASK = 0xC0,              ///< MASK
   FLOPPY_RATE_500KBPS = 0b00000000,
   FLOPPY_RATE_300KBPS = 0b01000000,
   FLOPPY_RATE_250KBPS = 0b10000000,
 };
-
-/* 32 */
-typedef BDA_90h_drive0_media_state_RATE BDA_drive_media_state_RATE;
 
 /* 33 */
 struct DPTe
@@ -611,6 +612,7 @@ enum IVT_Vectors : unsigned __int16
   IVT_FDC = 0xE,
   IVT_VIDEO = 0x10,
   IVT_VIDEO_off = 0x40,
+  IVT_VIDEO_seg = 0x42,
   IVT_EQUIPMENT_CHECK = 0x11,
   IVT_MEMORY_SIZE = 0x12,
   IVT_DISK_IO = 0x13,
@@ -626,6 +628,8 @@ enum IVT_Vectors : unsigned __int16
   IVT_TIME = 0x1A,
   IVT_CTRL_BREAK = 0x1B,
   IVT_TIMER_TICK = 0x1C,
+  IVT_TIMER_TICK_off = 0x70,
+  IVT_TIMER_TICK_seg = 0x72,
   IVT_Video_Initialization_Table = 0x1D,
   IVT_Video_Initialization_Table_off = 0x74,
   IVT_Video_Initialization_Table_seg = 0x7A,
@@ -680,16 +684,17 @@ enum BDA_indexes : unsigned __int8
   BDA_46h_floppy_head_number = 0x46,
   BDA_47h_floppy_sector_number = 0x47,
   BDA_48h_floppy_bytes_written = 0x48,
-  BDA_42h_Zenith_IDE_1F1h_PrecompCyl = 0x42,
-  BDA_43h_Zenith_IDE_1F2h_Sector_Count = 0x43,
-  BDA_44h_Zenith_IDE_1F3h_Sector_Num = 0x44,
-  BDA_45h_Zenith_IDE_1F4h_Cyl_Low = 0x45,
-  BDA_46h_Zenith_IDE_1F5h_Cyl_High = 0x46,
-  BDA_47h_Zenith_IDE_1F6h_Drive_Head = 0x47,
-  BDA_48h_Zenith_IDE_1F7h_Command = 0x48,
+  BDA_42h_IDE_1F1h_PrecompCyl = 0x42,
+  BDA_43h_IDE_1F2h_Sector_Count = 0x43,
+  BDA_44h_IDE_1F3h_Sector_Num = 0x44,
+  BDA_45h_IDE_1F4h_Cyl_Low = 0x45,
+  BDA_46h_IDE_1F5h_Cyl_High = 0x46,
+  BDA_47h_IDE_1F6h_Drive_Head = 0x47,
+  BDA_48h_IDE_1F7h_Command = 0x48,
   BDA_49h_video_active_mode = 0x49,
   BDA_4Ah_video_columns_per_row = 0x4A,
   BDA_4Ch_video_active_page_size = 0x4C,
+  BDA_4Dh_video_active_page_size_High_byte = 0x4D,
   BDA_4Eh_Offset_address_of_active_video_page_in_video_RAM = 0x4E,
   BDA_50h_cursor_pos_page0 = 0x50,
   BDA_51h_cursor_pos_page0_row = 0x51,
@@ -700,7 +705,8 @@ enum BDA_indexes : unsigned __int8
   BDA_5Ah_cursor_pos_page5 = 0x5A,
   BDA_5Ch_cursor_pos_page6 = 0x5C,
   BDA_5Eh_cursor_pos_page7 = 0x5E,
-  BDA_60h_cursor_mode = 0x60,
+  BDA_60h_cursor_ending_scanline = 0x60,
+  BDA_61h_cursor_starting_scanline = 0x61,
   BDA_62h_video_active_page = 0x62,
   BDA_63h_CRTC_6845_base_address = 0x63,
   BDA_65h_CRTC_Mode_Control = 0x65,
@@ -713,7 +719,7 @@ enum BDA_indexes : unsigned __int8
   BDA_70h_Timer_24_hour_flag = 0x70,
   BDA_71h_Keyboard_Ctrl_Break_flag = 0x71,
   BDA_72h_soft_reset_flag = 0x72,
-  BDA_73h_soft_reset_flag_low_byte = 0x73,
+  BDA_73h_soft_reset_flag_High_byte = 0x73,
   BDA_74h_HDD_last_op_status = 0x74,
   BDA_75h_HDD_count = 0x75,
   BDA_76h_HDD_ctrl_byte = 0x76,
@@ -751,23 +757,19 @@ enum BDA_indexes : unsigned __int8
   BDA_9Ah_User_Wait_pointer_Segment = 0x9A,
   BDA_9Ch_User_Wait_count_lower = 0x9C,
   BDA_9Eh_User_Wait_count_upper = 0x9E,
-  BDA_C0h_Sanyo_video_seg = 0xC0,
   BDA_A0h_User_Wait_Flag = 0xA0,
   BDA_A8h_video_param_ctrl_block_Offset = 0xA8,
   BDA_AAh_video_param_ctrl_block_Segment = 0xAA,
-  BDA_BFh_custom_semaphore = 0xBF,
+  BDA_Offset = 0x40,
+  BDA_BFh_Zenith_custom_semaphore = 0xBF,
+  BDA_C0h_Sanyo_video_seg = 0xC0,
+  BDA_C2h_Sanyo_active_display_page_offset = 0xC2,
+  BDA_C4h_Sanyo_CPU_tuned_delay_constant_25_40us = 0xC4,
+  BDA_C5h_Sanyo_Video_Flags = 0xC5,
+  BDA_D1h_Sanyo_CPU_speed_score_0ws = 0xD1,
+  BDA_D3h_Sanyo_CPU_speed_score_1ws = 0xD3,
+  BDA_D5h_Sanyo_CPU_speed_index_waitstate = 0xD5, ///< [6,8,10,12] -6 = 0,2,4,6 indexing [6,8,10,12.5] MHz, bit0 waitstate
 };
-
-/* 37 */
-enum __bitmask __bin __lzero BDA_90h_drive0_media_state_flags : unsigned __int8
-{
-  BDA_90h_drive_media_state_BIT3_RESERVED = 0b00001000,
-  BDA_90h_drive_media_state_ESTABLISHED = 0b00010000,
-  BDA_90h_drive_media_state_DOUBLE_STEP = 0b00100000,
-};
-
-/* 38 */
-typedef BDA_90h_drive0_media_state_flags BDA_drive_media_state_flags;
 
 /* 39 */
 enum __bitmask __bin __lzero BDA_8Bh_floppy_cfg_data : unsigned __int8
@@ -856,7 +858,7 @@ enum int13h_services : unsigned __int16
   int13h_13_Drive_diagnostic = 0x13,
   int13h_14_Controller_internal_diagnostic = 0x14,
   int13h_1400_Controller_internal_diagnostic = 0x1400,
-  int13h_15_Read_disk_type = 0x15,
+  int13h_15_Read_DASD_type = 0x15,
   int13h_16_Disk_change_line_status = 0x16,
   int13h_17_Set_dasd_type_for_format = 0x17,
   int13h_18_Set_media_type_for_format = 0x18,
@@ -875,20 +877,19 @@ enum int13h_services : unsigned __int16
 /* 44 */
 enum __bitmask __bin __lzero BDA_90h_drive0_media_state : unsigned __int8
 {
-  FLOPPY_STATE_MASK = 0x07,             ///< MASK 0 = TRY_360K_IN_360K
-  FLOPPY_STATE_TRY_360K_IN_1_2MB = 0b00000001,
-  FLOPPY_STATE_TRY_1_2MB_IN_1_2MB = 0b00000010,
-  FLOPPY_STATE_EST_360K_IN_360K = 0b00000011,
-  FLOPPY_STATE_EST_360K_IN_1_2MB = 0b00000100,
-  FLOPPY_STATE_EST_1_2MB_IN_1_2MB = 0b00000101,
-  FLOPPY_STATE_RESERVED = 0b00000110,
-  FLOPPY_STATE_OTHER_FORMATS = 0b00000111,
-  FLOPPY_STATE_BIT3_RESERVED = 0b00001000,
-  FLOPPY_STATE_known_media = 0b00010000,
-  FLOPPY_STATE_double_stepping = 0b00100000,
-  FLOPPY_STATE_RATE_MASK = 0xC0,        ///< MASK 0 = 500KBPS
-  FLOPPY_STATE_RATE_300KBPS = 0b01000000,
-  FLOPPY_STATE_RATE_250KBPS = 0b10000000,
+  BDA_90h_drive_STATE_MASK = 0x07,      ///< MASK 0 = TRY_360K_IN_360K
+  BDA_90h_drive_STATE_TRY_360K_IN_1_2MB = 0b00000001,
+  BDA_90h_drive_STATE_TRY_1_2MB_IN_1_2MB = 0b00000010,
+  BDA_90h_drive_STATE_EST_360K_IN_360K = 0b00000011,
+  BDA_90h_drive_STATE_EST_360K_IN_1_2MB = 0b00000100,
+  BDA_90h_drive_STATE_EST_1_2MB_IN_1_2MB = 0b00000101,
+  BDA_90h_drive_STATE_RESERVED = 0b00000110,
+  BDA_90h_drive_STATE_BIT3_RESERVED = 0b00001000,
+  BDA_90h_drive_STATE_media_ESTABLISHED = 0b00010000,
+  BDA_90h_drive_STATE_double_stepping = 0b00100000,
+  BDA_90h_drive_STATE_RATE_MASK = 0xC0, ///< MASK 0 = 500KBPS
+  BDA_90h_drive_STATE_RATE_300KBPS = 0b01000000,
+  BDA_90h_drive_STATE_RATE_250KBPS = 0b10000000,
 };
 
 /* 45 */
@@ -1055,7 +1056,7 @@ enum BDA_74h_HDD_last_op_status : unsigned __int8
   BDA_74h_status_4_SECTOR_NOT_FND = 0x4,
   BDA_74h_status_5_RESET_FAILED = 0x5,
   BDA_74h_status_6_Disk_changed_removed = 0x6,
-  BDA_74h_status_7_Paameter_Table_ERR = 0x7,
+  BDA_74h_status_7_Parameter_Table_ERR = 0x7,
   BDA_74h_status_8_DMA_OVERRUN = 0x8,
   BDA_74h_status_9_DMA_64K_Boundary_ERR = 0x9,
   BDA_74h_status_A_BAD_SECTOR_FLAG = 0xA,
@@ -1088,10 +1089,10 @@ enum BDA_75h_HDD_count : unsigned __int8
 struct text_mode_params
 {
   unsigned __int8 num_pages;
-  unsigned int page_size;
-  unsigned int columns __udec;
-  unsigned int crtc_port;
-  unsigned int mode_reg;
+  unsigned __int16 page_size;
+  unsigned __int16 columns __udec;
+  unsigned __int16 crtc_port;
+  unsigned __int16 mode_reg;
   unsigned __int8 palette;
 };
 
@@ -1134,15 +1135,16 @@ enum int10h_services : unsigned __int8
   int10h_7_Scroll_active_page_down = 0x7,
   int10h_8_Read_character_and_attribute_at_cursor = 0x8,
   int10h_9_Write_character_and_attribute_at_cursor = 0x9,
+  int10h_0920_Write_SPACE_and_attribute_at_cursor = 0x20,
   int10h_A_Write_character_at_current_cursor = 0xA,
   int10h_B_Set_color_palette = 0xB,
   int10h_C_Write_graphics_pixel_at_coordinate = 0xC,
   int10h_D_Read_graphics_pixel_at_coordinate = 0xD,
   int10h_E_Write_text_in_teletype_mode = 0xE,
-  int10h_0E07_ring_BELL_teletype = 0x7,
-  int10h_0E0A_write_LineFeed_in_teletype_mode = 0xA,
-  int10h_0E0D_write_Carriage_Return_in_teletype_mode = 0xD,
-  int10h_0E78_write_x_in_teletype_mode = 0x78,
+  int10h_0E07_Ring_BELL_teletype = 0x7,
+  int10h_0E0A_Write_LineFeed_in_teletype_mode = 0xA,
+  int10h_0E0D_Write_Carriage_Return_in_teletype_mode = 0xD,
+  int10h_0E78_Write_x_in_teletype_mode = 0x78,
   int10h_F_Get_current_video_state = 0xF,
   int10h_10_Set_palette_registers = 0x10,
   int10h_11_Character_generator_routine = 0x11,
@@ -1265,11 +1267,12 @@ enum __bitmask __bin __lzero CMOS_14h_Equipment_Byte : unsigned __int8
   CMOS_14h_Equip_DISPLAY_TYPE_MASK = 0x30, ///< MASK 00 = VGA, 11 = MDA
   CMOS_14h_Equip_DISPLAY_40x25 = 0b00010000,
   CMOS_14h_Equip_DISPLAY_80x25 = 0b00100000,
-  CMOS_14h_Equip_FLOPPY_COUNT_MASK = 0b11000000, ///< MASK
+  CMOS_14h_Equip_FLOPPY_COUNT_MASK = 0xC0, ///< MASK
+  CMOS_14h_Equip_FLOPPY_COUNT_2 = 0b01000000,
 };
 
-/* 65 */
-enum IO_Port_72h_FE3001_Command_Index : unsigned __int8
+/* 195 */
+enum IO_Port_72h_FE3031_Command_Index : unsigned __int8
 {
   FE3031_0_BALE_delay = 0x0,
   FE3031_1_BALE_width = 0x4,
@@ -1285,11 +1288,8 @@ enum IO_Port_72h_FE3001_Command_Index : unsigned __int8
   FE3031_12_onboard_IO_delay = 0xC0,
 };
 
-/* 66 */
-typedef IO_Port_72h_FE3001_Command_Index FE3031_reg_index;
-
-/* 67 */
-enum IO_Port_73h_FE3001_Command_Data : unsigned __int8
+/* 196 */
+enum IO_Port_73h_FE3031_Command_Data : unsigned __int8
 {
   FE3031_DATA_0h = 0x0,
   FE3031_DATA_1h = 0x4,
@@ -1309,15 +1309,12 @@ enum IO_Port_73h_FE3001_Command_Data : unsigned __int8
   FE3031_DATA_Fh = 0xCC,
 };
 
-/* 68 */
-typedef IO_Port_73h_FE3001_Command_Data FE3031_data_value;
-
 /* 69 */
 #pragma pack(push, 1)
 struct FE3031_reg_pair
 {
-  FE3031_reg_index index;
-  FE3031_data_value data;
+  IO_Port_72h_FE3031_Command_Index index;
+  IO_Port_73h_FE3031_Command_Data data;
 };
 #pragma pack(pop)
 
@@ -1325,7 +1322,7 @@ struct FE3031_reg_pair
 #pragma pack(push, 1)
 struct FE3031_init
 {
-  int len;
+  unsigned __int16 len;
   FE3031_reg_pair byte[];
 };
 #pragma pack(pop)
@@ -1345,17 +1342,18 @@ enum __lzero CMOS_0Fh_Shutdown_Status : unsigned __int8
   CMOS_0Fh_Shutdown_INT15_BLOCK_MOVE_return = 0x09,
   CMOS_0Fh_Shutdown_JMP_DWORD_NO_EOI = 0x0A,
   CMOS_0Fh_Shutdown_USED_BY_80386 = 0x0B,
+  CMOS_0Fh_Shutdown_Sanyo_something = 0x10,
   CMOS_0Fh_Shutdown_Zenith_SCP_failure = 0x11,
 };
 
 /* 72 */
 struct IDT_Gate
 {
-  unsigned int offset_low __offset(OFF16|AUTO);
-  unsigned int selector;
+  unsigned __int16 offset_low __offset(OFF16|AUTO);
+  unsigned __int16 selector;
   unsigned __int8 zero;
   unsigned __int8 access;
-  unsigned int offset_high;
+  unsigned __int16 offset_high;
 };
 
 /* 73 */
@@ -1425,12 +1423,12 @@ struct ZBIOS_Record
   unsigned __int8 Down_target_idx __udec;
   unsigned __int8 Right_target_idx __udec;
   unsigned __int8 Left_target_idx __udec;
-  unsigned int Default_value __udec;
+  unsigned __int16 Default_value __udec;
   unsigned __int8 Label_idx __udec;
   unsigned __int8 Input_msg_idx __udec;
   unsigned __int8 Options_count __udec;
   unsigned __int8 unknown_byte;
-  unsigned int Handler_ptr __offset(OFF16|AUTO);
+  unsigned __int16 Handler_ptr __offset(OFF16|AUTO);
 };
 #pragma pack(pop)
 
@@ -1589,13 +1587,13 @@ enum __bitmask __bin __lzero BDA_7Bh_parallel_port4_timeout_vds : unsigned __int
 /* 92 */
 enum __bitmask __bin __lzero BDA_92h_drive0_starting_state : unsigned __int8
 {
-  FLOPPY_Start_State_DRIVE_CHANGE_line_detection = 0b00000001,
-  FLOPPY_Start_State_DRIVE_MULTIRATE = 0b00000010,
-  FLOPPY_Start_State_DRIVE_DETERMINED = 0b00000100,
-  FLOPPY_Start_State_DRIVE_RATE_MASK = 0xC0, ///< MASK 11 1MBPS
-  FLOPPY_Start_State_DRIVE_RATE_500KBPS = 0b00000000,
-  FLOPPY_Start_State_DRIVE_RATE_300KBPS = 0b01000000,
-  FLOPPY_Start_State_DRIVE_RATE_250KBPS = 0b10000000,
+  BDA_92h_DRIVE_CHANGE_line_detection = 0b00000001,
+  BDA_92h_DRIVE_MULTIRATE = 0b00000010,
+  BDA_92h_DRIVE_DETERMINED = 0b00000100,
+  BDA_92h_DRIVE_RATE_MASK = 0xC0,       ///< MASK 11 1MBPS
+  BDA_92h_DRIVE_RATE_500KBPS = 0b00000000,
+  BDA_92h_DRIVE_RATE_300KBPS = 0b01000000,
+  BDA_92h_DRIVE_RATE_250KBPS = 0b10000000,
 };
 
 /* 93 */
@@ -1604,14 +1602,14 @@ typedef BDA_92h_drive0_starting_state BDA_93h_drive1_starting_state;
 /* 94 */
 enum __bitmask __bin __lzero BDA_96h_keyboard_flags_3 : unsigned __int8
 {
-  BDA_96h_flags_3_LAST_SCODE_E1 = 0b00000001,
-  BDA_96h_flags_3_LAST_SCODE_E0 = 0b00000010,
-  BDA_96h_flags_3_Right_Ctrl_ACTIVE = 0b00000100,
-  BDA_96h_flags_3_Right_Alt_ACTIVE = 0b00001000,
+  BDA_96h_flags_3_last_Scancode_was_E1 = 0b00000001,
+  BDA_96h_flags_3_last_Scancode_was_E0 = 0b00000010,
+  BDA_96h_flags_3_Right_Ctrl_Pressed = 0b00000100,
+  BDA_96h_flags_3_Right_Alt_Pressed = 0b00001000,
   BDA_96h_flags_3_101_102_Keyboard = 0b00010000,
   BDA_96h_flags_3_FORCED_NumLock_ON = 0b00100000,
-  BDA_96h_flags_3_LAST_CODE_FIRST_ID_CHAR = 0b01000000,
-  BDA_96h_flags_3_READING_TWO_BYTE_ID = 0b10000000,
+  BDA_96h_flags_3_last_Scancode_was_FIRST_ID_Byte = 0b01000000,
+  BDA_96h_flags_3_waiting_for_TWO_BYTE_ID = 0b10000000,
 };
 
 /* 95 */
@@ -1710,32 +1708,32 @@ enum __bitmask __bin __lzero IO_Port_1F7h_IDE_0_Status : unsigned __int8
 /* 99 */
 enum IO_Port_60h_KBD_Command : unsigned __int8
 {
-  IO_Port_60h_KBD_CMD_3A_Self_Test = 0x3A,
-  IO_Port_60h_KBD_CMD_DD_A20_Disable = 0xDD,
-  IO_Port_60h_KBD_CMD_DF_A20_Enable = 0xDF,
+  IO_Port_60h_KBD_CMD_D1_DD_A20_Disable = 0xDD,
+  IO_Port_60h_KBD_CMD_D1_DF_A20_Enable = 0xDF,
   IO_Port_60h_KBD_CMD_ED_SET_LEDS = 0xED,
   IO_Port_60h_KBD_CMD_EE_ECHO = 0xEE,
   IO_Port_60h_KBD_CMD_F0_SCAN_CODE_SET = 0xF0,
   IO_Port_60h_KBD_CMD_F2_ID_KEYBOARD = 0xF2,
   IO_Port_60h_KBD_CMD_F3_TYPEMATIC_RATE = 0xF3,
   IO_Port_60h_KBD_CMD_F4_ENABLE = 0xF4,
-  IO_Port_60h_KBD_CMD_F5_DISABLE = 0xF5,
+  IO_Port_60h_KBD_CMD_F5_DISABLE = 0xF5, ///< also resets keyboard
   IO_Port_60h_KBD_CMD_F6_SET_DEFAULT = 0xF6,
   IO_Port_60h_KBD_CMD_FE_RESEND = 0xFE,
-  IO_Port_60h_KBD_CMD_FF_RESET_SELF_TEST = 0xFF,
+  IO_Port_60h_KBD_CMD_FF_RESET_BAT = 0xFF, ///< Basic Assurance Test
+  IO_Port_60h_KBD_CMD_Zenith_SCP_3A_Self_Test = 0x3A,
 };
 
 /* 100 */
 enum __bitmask __bin __lzero IO_Port_64h_KBC_Status : unsigned __int8
 {
-  IO_Port_64h_KBC_STAT_Output_Buffer_Full = 0b00000001,
-  IO_Port_64h_KBC_STAT_Input_Buffer_Full = 0b00000010,
-  IO_Port_64h_KBC_STAT_Warm_boot = 0b00000100,
-  IO_Port_64h_KBC_STAT_A2_Address_Line = 0b00001000,
-  IO_Port_64h_KBC_STAT_Inhibit = 0b00010000,
-  IO_Port_64h_KBC_STAT_Transmit_Timeout = 0b00100000,
-  IO_Port_64h_KBC_STAT_Receive_Timeout = 0b01000000,
-  IO_Port_64h_KBC_STAT_Parity_Error = 0b10000000,
+  IO_Port_64h_KBC_Stat_Output_Buffer_Full = 0b00000001, ///< Data ready to be read from 60h
+  IO_Port_64h_KBC_Stat_Input_Buffer_Full = 0b00000010, ///<  Still processing command sent to 60/64h. Do not write yet.
+  IO_Port_64h_KBC_Stat_System_Flag = 0b00000100, ///< Set to 1 to indicate warm boot
+  IO_Port_64h_KBC_Stat_Command_Data = 0b00001000, ///< Last write A2 Address Line status. 0 = was 60h data, 1 = was 64h command.
+  IO_Port_64h_KBC_Stat_Inhibit = 0b00010000, ///< Keyboard locked
+  IO_Port_64h_KBC_Stat_Transmit_Timeout_or_Mouse_OBF = 0b00100000,
+  IO_Port_64h_KBC_Stat_Receive_Timeout = 0b01000000,
+  IO_Port_64h_KBC_Stat_Parity_Error = 0b10000000,
 };
 
 /* 101 */
@@ -1759,15 +1757,24 @@ enum IO_Port_64h_KBC_Command : unsigned __int8
 };
 
 /* 102 */
-enum IO_Port_60h_KBD_Command_Status : unsigned __int8
+enum IO_Port_60h_KBD_Data : unsigned __int8
 {
-  IO_Port_60h_KBC_Stat_55_SELF_TEST_OK = 0x55,
-  IO_Port_60h_KBD_Stat_AA_RESET_SELF_TEST = 0xAA,
-  IO_Port_60h_KBD_Stat_EA_Zenith_RESET_SELF_TEST = 0xEA,
-  IO_Port_60h_KBD_Stat_EE_ECHO = 0xEE,
-  IO_Port_60h_KBD_Stat_FA_ACK = 0xFA,
-  IO_Port_60h_KBD_Stat_FC_SELF_TEST_FAIL = 0xFC,
-  IO_Port_60h_KBD_Stat_FE_RESEND = 0xFE,
+  IO_Port_60h_KBC_Resp_55_SELF_TEST_OK = 0x55,
+  IO_Port_60h_KBD_Resp_AA_BAT_SUCCESS = 0xAA, ///< Basic Assurance Test Passed
+  IO_Port_60h_KBD_Resp_FC_BAT_FAILURE = 0xFC, ///< Basic Assurance Test Failed
+  IO_Port_60h_KBD_Resp_EE_ECHO = 0xEE,  ///< Echo response
+  IO_Port_60h_KBD_Resp_FA_ACK = 0xFA,   ///< Acknowledge command
+  IO_Port_60h_KBD_Resp_FE_RESEND = 0xFE, ///< Resend last command
+  IO_Port_60h_KBD_Resp_FF_ERROR = 0xFF, ///< Key Detection Error or Overrun Error
+  KBD_PREFIX_E0_EXTENDED = 0xE0,
+  KBD_PREFIX_E1_PAUSE = 0xE1,
+  KBD_PREFIX_F0_BREAK_Set2 = 0xF0,
+  KBD_ID_AB_FIRST_BYTE = 0xAB,
+  KBD_ID_83_MF2_STD = 0x83,             ///< Standard MF2 Keyboard [AB 83]
+  KBD_ID_85_terminal_kbd = 0x85,        ///< NCD N-97 or another weird specialized keyboard [AB 85]
+  KBD_ID_86_122_Key_kbd = 0x86,
+  KBD_ID_41_MF2_TRANS = 0x41,           ///< MF2 in Translation mode [AB 41]
+  IO_Port_60h_KBD_Resp_EA_Zenith_RESET_SELF_TEST = 0xEA,
   IO_Port_60h_KBD_Zenith_Pass_Stat_FF_Pass_OK = 0xFF,
   IO_Port_60h_KBD_Zenith_Pass_Stat_0_Pass_enabled = 0x0,
   IO_Port_60h_KBD_Zenith_Pass_Stat_1_ = 0x1,
@@ -1779,18 +1786,15 @@ enum IO_Port_60h_KBD_Command_Status : unsigned __int8
 /* 103 */
 enum __bitmask __bin __lzero BDA_17h_Keyboard_flags_1 : unsigned __int8
 {
-  BDA_17h_flags_1_Right_SHIFT_DOWN = 0b00000001,
-  BDA_17h_flags_1_Left_SHIFT_DOWN = 0b00000010,
-  BDA_17h_flags_1_Ctrl_DOWN = 0b00000100,
-  BDA_17h_flags_1_Alt_DOWN = 0b00001000,
+  BDA_17h_flags_1_Right_SHIFT_Pressed = 0b00000001,
+  BDA_17h_flags_1_Left_SHIFT_Pressed = 0b00000010,
+  BDA_17h_flags_1_Ctrl_Pressed = 0b00000100,
+  BDA_17h_flags_1_Alt_Pressed = 0b00001000,
   BDA_17h_flags_1_ScrollLock_STATE = 0b00010000,
   BDA_17h_flags_1_NumLock_STATE = 0b00100000,
   BDA_17h_flags_1_CapsLock_STATE = 0b01000000,
   BDA_17h_flags_1_Insert_STATE = 0b10000000,
 };
-
-/* 104 */
-typedef BDA_17h_Keyboard_flags_1 BDA_17h_Keyboard_shift_flags_1;
 
 /* 105 */
 enum IVT_Video_Initialization_Table : unsigned __int8
@@ -1912,12 +1916,6 @@ enum IO_Port_80h_POST_Code : unsigned __int8
   POSTCODE_3D_Zenith_DMA_PIC_init = 0x3D,
 };
 
-/* 109 */
-enum __bitmask __bin __lzero BDA_18h_Keyboard_shift_flags_2 : unsigned __int8
-{
-  BDA_18h_flags_2_Right_Alt_PRESSED = 0b00000001,
-};
-
 /* 110 */
 enum __bitmask __bin __lzero IO_Port_3D8h_CRTC_Mode_Control : unsigned __int8
 {
@@ -1958,29 +1956,6 @@ enum __bitmask __bin __lzero IO_Port_3DAh_CRTC_Status : unsigned __int8
   IO_Port_3DAh_CGA_FC1_read = 0b00100000,
 };
 
-/* 115 */
-enum __lzero IO_Port_3D4h_CRTC_Index : unsigned __int8
-{
-  CRTC_Idx_HORIZ_TOTAL = 0x00,
-  CRTC_Idx_HORIZ_DISPLAYED = 0x01,
-  CRTC_Idx_HORIZ_SYNC_POS = 0x02,
-  CRTC_Idx_HORIZ_SYNC_WIDTH = 0x03,
-  CRTC_Idx_VERT_TOTAL = 0x04,
-  CRTC_Idx_VERT_TOTAL_ADJUST = 0x05,
-  CRTC_Idx_VERT_DISPLAYED = 0x06,
-  CRTC_Idx_VERT_SYNC_POS = 0x07,
-  CRTC_Idx_INTERLACE_MODE = 0x08,
-  CRTC_Idx_MAX_SCANLINE_ADDR = 0x09,
-  CRTC_Idx_CURSOR_START = 0x0A,
-  CRTC_Idx_CURSOR_END = 0x0B,
-  CRTC_Idx_START_ADDR_H = 0x0C,
-  CRTC_Idx_START_ADDR_L = 0x0D,
-  CRTC_Idx_CURSOR_ADDR_H = 0x0E,
-  CRTC_Idx_CURSOR_ADDR_L = 0x0F,
-  CRTC_Idx_LIGHT_PEN_H = 0x10,
-  CRTC_Idx_LIGHT_PEN_L = 0x11,
-};
-
 /* 116 */
 enum __lzero IO_Port_3D4h_CRTC_Index_CGA : unsigned __int8
 {
@@ -2006,23 +1981,6 @@ enum __lzero IO_Port_3D4h_CRTC_Index_CGA : unsigned __int8
 
 /* 117 */
 typedef IO_Port_3D4h_CRTC_Index_CGA IO_Port_3B4h_CRTC_Index_Mono;
-
-/* 118 */
-enum KEYBOARD_RESPONSES : unsigned __int8
-{
-  KBD_RES_AA_BAT_SUCCESS = 0xAA,        ///< Basic Assurance Test Passed
-  KBD_RES_FC_BAT_FAILURE = 0xFC,        ///< Basic Assurance Test Failed
-  KBD_RES_EE_ECHO = 0xEE,               ///< Echo response
-  KBD_RES_FA_ACK = 0xFA,                ///< Acknowledge command
-  KBD_RES_FE_RESEND = 0xFE,             ///< Resend last command
-  KBD_PREFIX_E0_EXTENDED = 0xE0,
-  KBD_PREFIX_E1_PAUSE = 0xE1,
-  KBD_ID_AB_FIRST_BYTE = 0xAB,
-  KBD_ID_83_MF2_STD = 0x83,             ///< Standard MF2 Keyboard [AB 83]
-  KBD_ID_85_terminal_kbd = 0x85,        ///< NCD N-97 or another weird specialized keyboard [AB 85]
-  KBD_ID_86_122_Key_kbd = 0x86,
-  KBD_ID_41_MF2_TRANS = 0x41,           ///< MF2 in Translation mode [AB 41]
-};
 
 /* 119 */
 enum __bitmask __bin __lzero IO_Port_3D9h_CGA_Color_Control : unsigned __int8
@@ -2107,7 +2065,7 @@ enum __bitmask __bin __lzero IO_Port_3FBh_UART_Line_Control : unsigned __int8
 };
 
 /* 126 */
-enum __bitmask __bin __lzero IO_Port_3FAh_UART_Interrupt_Ident : unsigned __int8
+enum __bitmask __bin __lzero IO_Port_3FAh_UART1_Interrupt_Ident : unsigned __int8
 {
   IO_Port_3FAh_UART_IIR_Int_PENDING = 0b00000001,
   IO_Port_3FAh_UART_IIR_Int_MASK = 0x0E, ///< MASK
@@ -2462,8 +2420,8 @@ struct ZBIOS_RowNode
 struct ZBIOS_DrawCommand
 {
   unsigned __int8 coord_X __udec;
-  char character __strlit(C,"UTF-8");
-  unsigned int repeat_count __udec;
+  char character __strlit(C,"CP437");
+  unsigned __int16 repeat_count __udec;
 };
 #pragma pack(pop)
 
@@ -2476,7 +2434,7 @@ enum Keyboard_scancodes : unsigned __int16
   scancode_TAB = 0x9,
   scancode_CR_ENTER = 0x1C,
   scancode_CR_ENTER_ = 0x1C0D,
-  scancode_Ctrl_S = 0x1F,
+  scancode_Ctrl_S = 0x13,
   scancode_Ctrl_S_ = 0x1F13,
   scancode_Ctrl_C_ = 0x2E03,
   scancode_ESC = 0x1B,
@@ -2530,11 +2488,10 @@ struct ZBIOS_Page
 /* 160 */
 enum __bitmask __bin __lzero IO_Port_3F7h_FDC_Config_Control : unsigned __int8
 {
-  IO_Port_3F7h_FDC_Conf_Rate_MASK = 0x03, ///< MASK
+  IO_Port_3F7h_FDC_Conf_Rate_MASK = 0x03, ///< MASK 11 = 1MBPS
   IO_Port_3F7h_FDC_Conf_Rate_500KBPS = 0b00000000,
   IO_Port_3F7h_FDC_Conf_Rate_300KBPS = 0b00000001,
   IO_Port_3F7h_FDC_Conf_Rate_250KBPS = 0b00000010,
-  IO_Port_3F7h_FDC_Conf_Rate_1MBPS = 0b00000011,
   IO_Port_3F7h_FDC_Conf_NOPREC = 0b00000100,
 };
 
@@ -2623,24 +2580,6 @@ enum Zenith_Slushware_RAM : unsigned __int16
   Zenith_cs54Eh_DMA6_Count_pending = 0x54E,
   Zenith_cs550h_A20 = 0x550,
 };
-
-/* 166 */
-#pragma pack(push, 1)
-struct FE3001_reg_pair
-{
-  IO_Port_72h_FE3001_Command_Index index;
-  IO_Port_73h_FE3001_Command_Data data;
-};
-#pragma pack(pop)
-
-/* 167 */
-#pragma pack(push, 1)
-struct FE3001_init
-{
-  unsigned int len;
-  FE3001_reg_pair byte[];
-};
-#pragma pack(pop)
 
 /* 168 */
 enum __bitmask __bin __lzero IO_Port_3D4h_CRTC_Idx_5_Horiz_Retrace_End : unsigned __int8
@@ -2737,19 +2676,20 @@ enum Zenith_cs4CAh_MFM_Tempest_bios_present : unsigned __int8
 /* 176 */
 enum __bitmask __bin __lzero BDA_18h_Keyboard_flags_2 : unsigned __int8
 {
-  BDA_18h_flags_2_Left_Ctrl_PRESSED = 0b00000001,
-  BDA_18h_flags_2_Left_Alt_PRESSED = 0b00000010,
-  BDA_18h_flags_2_SysReg_PRESSED = 0b00000100,
+  BDA_18h_flags_2_Left_Ctrl_Pressed = 0b00000001,
+  BDA_18h_flags_2_Left_Alt_Pressed = 0b00000010,
+  BDA_18h_flags_2_SysReg_Pressed = 0b00000100,
   BDA_18h_flags_2_Pause_ACTIVE = 0b00001000,
-  BDA_18h_flags_2_ScrollLock_PRESSED = 0b00010000,
-  BDA_18h_flags_2_NumLock_PRESSED = 0b00100000,
-  BDA_18h_flags_2_CapsLock_PRESSED = 0b01000000,
-  BDA_18h_flags_2_Insert_PRESSED = 0b10000000,
+  BDA_18h_flags_2_ScrollLock_Pressed = 0b00010000,
+  BDA_18h_flags_2_NumLock_Pressed = 0b00100000,
+  BDA_18h_flags_2_CapsLock_Pressed = 0b01000000,
+  BDA_18h_flags_2_Insert_Pressed = 0b10000000,
 };
 
 /* 177 */
-enum ScanCode_Set_1 : unsigned __int8
+enum __bitmask ScanCode_Set_1 : unsigned __int8
 {
+  scancode_key_MASK = 0x7F,             ///< MASK
   scancode_NULL = 0x0,
   scancode_Esc = 0x1,
   scancode_1 = 0x2,
@@ -2794,7 +2734,7 @@ enum ScanCode_Set_1 : unsigned __int8
   scancode_M = 0x32,
   scancode_Opening_Bracket = 0x1A,
   scancode_Closing_Bracket = 0x1B,
-  scancode_Enter = 0x1C,
+  scancode_Enter_Keypad_Enter_E0_1C = 0x1C,
   scancode_Semicolon = 0x27,
   scancode_Apostrophe = 0x28,
   scancode_Grave_accent = 0x29,
@@ -2802,22 +2742,29 @@ enum ScanCode_Set_1 : unsigned __int8
   scancode_Comma = 0x33,
   scancode_Period = 0x34,
   scancode_Slash = 0x35,
-  scancode_Keypad_Asterisk = 0x37,
+  scancode_Keypad_Asterisk_PrtSc = 0x37,
   scancode_SpaceBar = 0x39,
   scancode_CapsLock = 0x3A,
-  scancode_Left_Control = 0x1D,
+  scancode_Left_Control_Right_Control_E0_1D = 0x1D,
   scancode_Left_Shift = 0x2A,
   scancode_Right_Shift = 0x36,
   scancode_Left_Alt = 0x38,
-  scancode_NumLock = 0x45,
-  scancode_ScrollLock = 0x46,
-  scancode_Home = 0x47,
-  scancode_Up_Arrow = 0x48,
-  scancode_Left_Arrow = 0x4B,
-  scancode_Right_Arrow = 0x4D,
-  scancode_Down_Arrow = 0x50,
+  scancode_NumLock_Pause_E1_1D_45 = 0x45,
+  scancode_ScrollLock_Ctrl_Break_E0_46 = 0x46,
+  scancode_Keypad_7_Home = 0x47,
+  scancode_Keypad_8_Up_Arrow = 0x48,
+  scancode_Keypad_9_PgUp = 0x49,
+  scancode_Keypad_Minus = 0x4A,
+  scancode_Keypad_4_Left_Arrow = 0x4B,
+  scancode_Keypad_5 = 0x4C,
+  scancode_Keypad_6_Right_Arrow = 0x4D,
+  scancode_Keypad_Plus = 0x4E,
+  scancode_Keypad_1_End = 0x4F,
+  scancode_Keypad_2_Down_Arrow = 0x50,
+  scancode_Keypad_3_PgDn = 0x51,
   scancode_Keypad_0_Insert = 0x52,
-  scancode_Del = 0x53,
+  scancode_Keypad_period_Del_Del_E0_53 = 0x53,
+  scancode_SysReq = 0x54,
   scancode_F1 = 0x3B,
   scancode_F2 = 0x3C,
   scancode_F3 = 0x3D,
@@ -2830,10 +2777,7 @@ enum ScanCode_Set_1 : unsigned __int8
   scancode_F10 = 0x44,
   scancode_F11 = 0x57,
   scancode_F12 = 0x58,
-  scancode_Break_MASK = 0x80,           ///< MASK for key Make/Break
-  scancode_Right_Alt_Break_E0_B8 = 0xB8,
-  scancode_PrtSc_E0_37 = 0x37,
-  scancode_Pause_E1_1D_45 = 0x45,
+  scancode_Break_MASK = 0x80,           ///< MASK
 };
 
 /* 178 */
@@ -2931,23 +2875,23 @@ enum __bitmask __bin Zenith_cs550h_A20 : unsigned __int8
 };
 
 /* 187 */
-enum int16_scancodes : unsigned __int16
+enum __lzero int16_scancodes : unsigned __int16
 {
-  int16_scancode_Esc = 0x11B,
-  int16_scancode_1 = 0x231,
-  int16_scancode_2 = 0x332,
-  int16_scancode_3 = 0x433,
-  int16_scancode_4 = 0x534,
-  int16_scancode_5 = 0x635,
-  int16_scancode_6 = 0x736,
-  int16_scancode_7 = 0x837,
-  int16_scancode_8 = 0x938,
-  int16_scancode_9 = 0xA39,
-  int16_scancode_0 = 0xB30,
-  int16_scancode_Minus = 0xC2D,
-  int16_scancode_Equals = 0xD3D,
-  int16_scancode_BackSpace = 0xE08,
-  int16_scancode_Tab = 0xF09,
+  int16_scancode_Esc = 0x011B,
+  int16_scancode_1 = 0x0231,
+  int16_scancode_2 = 0x0332,
+  int16_scancode_3 = 0x0433,
+  int16_scancode_4 = 0x0534,
+  int16_scancode_5 = 0x0635,
+  int16_scancode_6 = 0x0736,
+  int16_scancode_7 = 0x0837,
+  int16_scancode_8 = 0x0938,
+  int16_scancode_9 = 0x0A39,
+  int16_scancode_0 = 0x0B30,
+  int16_scancode_Minus = 0x0C2D,
+  int16_scancode_Equals = 0x0D3D,
+  int16_scancode_BackSpace = 0x0E08,
+  int16_scancode_Tab = 0x0F09,
   int16_scancode_Q = 0x1071,
   int16_scancode_W = 0x1177,
   int16_scancode_E = 0x1265,
@@ -2977,6 +2921,7 @@ enum int16_scancodes : unsigned __int16
   int16_scancode_Opening_Bracket = 0x1A5B,
   int16_scancode_Closing_Bracket = 0x1B5D,
   int16_scancode_Enter = 0x1C0D,
+  int16_scancode_Enter_Ctrl = 0x1C0A,
   int16_scancode_Semicolon = 0x273B,
   int16_scancode_Apostrophe = 0x2827,
   int16_scancode_Grave_accent = 0x2960,
@@ -2984,6 +2929,7 @@ enum int16_scancodes : unsigned __int16
   int16_scancode_Comma = 0x332C,
   int16_scancode_Period = 0x342E,
   int16_scancode_Slash = 0x352F,
+  int16_scancode_Slash_Ctrl = 0x9500,
   int16_scancode_Keypad_Asterisk = 0x372A,
   int16_scancode_SpaceBar = 0x3920,
   int16_scancode_F1 = 0x3B00,
@@ -3011,27 +2957,11 @@ enum int16_scancodes : unsigned __int16
   int16_scancode_Down_Arrow = 0x5000,
   int16_scancode_PgUp = 0x4900,
   int16_scancode_PgDn = 0x5100,
+  int16_scancode_PrtSc = 0x7200,
 };
 
 /* 188 */
 typedef IO_Port_1F6h_IDE_0_Drive_Head BDA_47h_Zenith_IDE_1F6h_Drive_Head;
-
-/* 189 */
-struct regs16
-{
-  unsigned __int8 dl;
-  unsigned __int8 dh;
-  unsigned int bp;
-  unsigned int di;
-  unsigned int si;
-  unsigned int ds;
-  unsigned __int8 cl;
-  unsigned __int8 ch;
-  unsigned int bx;
-  unsigned __int8 al;
-  unsigned __int8 ah;
-  unsigned int es;
-};
 
 /* 190 */
 enum __bitmask __lzero Row_Column : unsigned __int16
@@ -3196,8 +3126,26 @@ struct BIOS_DTK_cursor
 /* 193 */
 enum DTK_RAM : unsigned __int16
 {
+  DTK_ds200h_selected_Option = 0x200,
+  DTK_ds20Dh_numeric_Buffer_start = 0x20D,
+  DTK_ds217h_BadTrack_list_index = 0x217,
+  DTK_ds21Eh_PREFORMAT_disk_Letter = 0x21E,
+  DTK_ds21Fh_PREFORMAT_disk_ID = 0x21F,
+  DTK_ds220h_PREFORMAT_disk_Heads = 0x220,
+  DTK_ds221h_PREFORMAT_disk_Cylinders = 0x221,
   DTK_ds224h_Bios_text_color = 0x224,
+  DTK_ds23Eh_Base_Ram_Option = 0x23E,
+  DTK_ds23Fh_Floppy_A_Type = 0x23F,
+  DTK_ds240h_Floppy_B_Type = 0x240,
+  DTK_ds24Ch_PREFORMAT_Interleave = 0x24C,
+  DTK_ds24Dh_Keyboard_input = 0x24D,
+  DTK_ds24Fh_Base_Ram_Capacity = 0x24F,
   DTK_ds253h_Bios_cursor_color = 0x253,
+  DTK_ds254h_drive_C_BadTracks = 0x254,
+  DTK_ds255h_drive_D_BadTracks = 0x255,
+  DTK_ds25Dh_hidden_Cursor_location = 0x25D,
+  DTK_ds1000h_drive_C_BadTrack_list = 0x1000,
+  DTK_ds1800h_drive_D_BadTrack_list = 0x1800,
 };
 
 /* 194 */
@@ -3233,4 +3181,134 @@ enum __bitmask __bin __lzero Text_Attributes : unsigned __int8
   Fg_Yellow = 0b00001110,
   Fg_White = 0b00001111,
 };
+
+/* 197 */
+#pragma pack(push, 1)
+struct __unaligned __declspec(align(2)) SystemTablePointer16
+{
+  unsigned __int16 gdt_limit;
+  unsigned __int16 gdt_base __offset(OFF16|RVAOFF);
+};
+#pragma pack(pop)
+
+/* 198 */
+enum int15h_services : unsigned __int16
+{
+  int15h_4F_Keyboard_Intercept = 0x4F,
+  int15h_80_Device_Open = 0x80,
+  int15h_81_Device_Close = 0x81,
+  int15h_82_Process_Termination = 0x82,
+  int15h_83_Event_Wait_Interval = 0x83,
+  int15h_8300_Set_Event_Wait_Interval = 0x8300,
+  int15h_8301_Cancel_Event_Wait = 0x8301,
+  int15h_84_Joystick_Read = 0x84,
+  int15h_85_SysReq_Key = 0x85,
+  int15h_8500_SysReq_Pressed = 0x8500,
+  int15h_8501_SysReq_Released = 0x8501,
+  int15h_86_Wait = 0x86,
+  int15h_87_Copy_eXtended_Memory = 0x87,
+  int15h_88_Get_Extended_Memory_Size = 0x88,
+  int15h_89_Enter_Protected_Mode = 0x89,
+  int15h_90_os_hook_Device_Busy = 0x90,
+  int15h_9000_fixed_disk_Device_Busy = 0x9000,
+  int15h_9001_diskette_Device_Busy = 0x9001,
+  int15h_9002_keyboard_Device_Busy = 0x9002,
+  int15h_90FD_diskette_motor_start_wait = 0x90FD,
+  int15h_91_os_hook_Device_Post = 0x91, ///< "Device Post" called after I/O complete
+  int15h_9100_fixed_disk_Int_Complete = 0x9100,
+  int15h_9101_diskette_Int_Complete = 0x9101,
+  int15h_9102_keyboard_Int_Complete = 0x9102,
+  int15h_C0_Get_System_Configuration = 0xC0,
+  int15h_C1_Get_EBDA_Address = 0xC1,
+  int15h_C2_Mouse_Pointer_Service = 0xC2,
+  int15h_C3_Set_Watchdog_Timeout = 0xC3,
+  int15h_C4_Programmable_Option_Select = 0xC4,
+};
+
+/* 199 */
+enum __bitmask __bin __lzero BDA_C5h_Sanyo_Video_Flags : unsigned __int8
+{
+  BDA_C5h_b7_CGA_mode456 = 0b10000000,
+  BDA_C5h_b6_CRTC_no_readback = 0b01000000,
+  BDA_C5h_b5_update_cursor_position = 0b00100000,
+  BDA_C5h_b4_MDA = 0b00010000,
+  BDA_C5h_b3_already_tested_CRTC = 0b00001000,
+};
+
+/* 200 */
+struct Sanyo_int13_stack_frame
+{
+  unsigned __int8 local_byte0;
+  unsigned __int8 local_byte1;
+  unsigned __int8 local_byte2;
+  unsigned __int8 local_byte3;
+  unsigned __int8 local_byte4;
+  unsigned __int8 local_byte5;
+  unsigned __int8 local_byte6;
+  unsigned __int8 local_byte7;
+  unsigned __int8 local_byte8;
+  unsigned __int8 local_byte9;
+  unsigned __int16 int_13h_diskIO_handler_finish_ptr;
+  unsigned __int16 jump_trampoline_return_ptr;
+  unsigned __int16 reg_es;
+  unsigned __int16 reg_ds;
+  unsigned __int16 reg_bp;
+  unsigned __int16 reg_di;
+  unsigned __int16 reg_si;
+  unsigned __int8 reg_dl;
+  unsigned __int8 reg_dh;
+  unsigned __int8 reg_cl;
+  unsigned __int8 reg_ch;
+  unsigned __int8 reg_bl;
+  unsigned __int8 reg_bh;
+  unsigned __int8 reg_al;
+  unsigned __int8 reg_ah;
+  unsigned __int16 max_index_ptr;
+  unsigned __int16 table_ptr;
+  unsigned __int16 int_ip;
+  unsigned __int16 int_cs;
+  unsigned __int16 int_flags;
+};
+
+/* 201 */
+#pragma pack(push, 1)
+struct Sanyo_int_stack_frame
+{
+  unsigned __int16 reg_es;
+  unsigned __int16 reg_ds;
+  unsigned __int16 reg_bp;
+  unsigned __int16 reg_di;
+  unsigned __int16 reg_si;
+  unsigned __int8 reg_dl;
+  unsigned __int8 reg_dh;
+  unsigned __int8 reg_cl;
+  unsigned __int8 reg_ch;
+  unsigned __int8 reg_bl;
+  unsigned __int8 reg_bh;
+  unsigned __int8 reg_al;
+  unsigned __int8 reg_ah;
+  unsigned __int16 max_index_ptr;
+  unsigned __int16 table_ptr;
+  unsigned __int16 int_ip;
+  unsigned __int16 int_cs;
+  unsigned __int16 int_flags;
+};
+#pragma pack(pop)
+
+/* 202 */
+enum __bitmask __bin __lzero IO_Port_63h_Sanyo_waitstates : unsigned __int8
+{
+  IO_Port_63h_Sanyo_waitstate_MASK = 0x01, ///<  MASK
+  IO_Port_63h_Sanyo_0_waitstates = 0b00000000,
+  IO_Port_63h_Sanyo_1_waitstate = 0b00000001,
+};
+
+/* 203 */
+#pragma pack(push, 1)
+struct port_init8
+{
+  unsigned __int8 offset __enum(IO_Ports);
+  unsigned __int8 value;
+};
+#pragma pack(pop)
 
